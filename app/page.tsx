@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isMonthly, setIsMonthly] = useState(false)
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -86,11 +86,9 @@ export default function Home() {
             <h3>MindfulBalance</h3>
           </div>
           <ul className="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
+                                <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
           </ul>
           <div className="nav-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span></span>
@@ -254,117 +252,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="pricing">
-        <div className="container">
-          <motion.h2 
-            className="section-title"
-            {...fadeInUp}
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            Choose Your Plan
-          </motion.h2>
-          <div className="pricing-toggle">
-            <button 
-              className={!isMonthly ? 'active' : ''}
-              onClick={() => setIsMonthly(false)}
-            >
-              Weekly
-            </button>
-            <button 
-              className={isMonthly ? 'active' : ''}
-              onClick={() => setIsMonthly(true)}
-            >
-              Monthly
-            </button>
-          </div>
-          <div className="pricing-grid">
-            {[
-              {
-                name: "Starter",
-                icon: "fas fa-leaf",
-                weeklyPrice: 89,
-                monthlyPrice: 299,
-                features: ["2 Individual Sessions", "Basic Wellness Resources", "Email Support"]
-              },
-              {
-                name: "Premium",
-                icon: "fas fa-heart",
-                weeklyPrice: 149,
-                monthlyPrice: 499,
-                features: ["4 Individual Sessions", "2 Group Sessions", "Mindfulness Training", "24/7 Support"],
-                featured: true
-              },
-              {
-                name: "Complete",
-                icon: "fas fa-star",
-                weeklyPrice: 199,
-                monthlyPrice: 699,
-                features: ["Unlimited Sessions", "Wellness Coaching", "Personalized Programs", "Priority Support"]
-              }
-            ].map((plan, index) => (
-              <motion.div 
-                key={index}
-                className={`pricing-card ${plan.featured ? 'featured' : ''}`}
-                {...fadeInUpDelayed(index * 0.2)}
-                whileInView="animate"
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="pricing-icon">
-                  <i className={plan.icon}></i>
-                </div>
-                <h3>{plan.name}</h3>
-                <div className="price">
-                  <span className="amount">
-                    ${isMonthly ? plan.monthlyPrice : plan.weeklyPrice}
-                  </span>
-                  <span className="period">
-                    /{isMonthly ? 'month' : 'week'}
-                  </span>
-                </div>
-                <ul className="features">
-                  {plan.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-                <button className="pricing-cta">Choose Plan</button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Team Section */}
-      <section id="team" className="team">
-        <div className="container">
-          <motion.div 
-            className="team-content"
-            {...fadeInUp}
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <div className="team-image">
-              <Image 
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="Our Team" 
-                width={600} 
-                height={400}
-              />
-            </div>
-            <div className="team-text">
-              <h2>Meet Our Expert Team</h2>
-              <p>Our team of licensed therapists and wellness coaches are dedicated to helping you achieve mental clarity and emotional balance. With over 50 years of combined experience, we provide evidence-based treatments tailored to your unique needs.</p>
-              <blockquote>
-                "We believe that everyone deserves to live a fulfilling life free from the burden of mental health challenges."
-                <cite>- Dr. Sarah Johnson, Lead Therapist</cite>
-              </blockquote>
-              <button className="team-cta">Meet the Team</button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Testimonials Section */}
       <section className="client-testimonial">
@@ -536,7 +424,6 @@ export default function Home() {
               <div className="footer-column">
                 <h4>Company</h4>
                 <ul>
-                  <li><a href="#team">Our Team</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <li><a href="#">Privacy Policy</a></li>
                   <li><a href="#">Terms of Service</a></li>
