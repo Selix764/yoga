@@ -10,6 +10,27 @@ export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  // Consistent animation variants for all cards
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+
+  const fadeInUpDelayed = (delay: number) => ({
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: "easeOut", delay }
+  })
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
   const testimonials = [
     {
       text: "The individual therapy sessions have been life-changing. I've learned to manage my anxiety and found inner peace I never thought possible.",
@@ -114,9 +135,8 @@ export default function Home() {
         <div className="container">
           <motion.h2 
             className="classes-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            {...fadeInUp}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             Classes
@@ -125,9 +145,8 @@ export default function Home() {
             {/* Main Class Card */}
             <motion.div 
               className="class-card main-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              {...fadeInUp}
+              whileInView="animate"
               viewport={{ once: true }}
             >
               <div className="class-content">
@@ -172,9 +191,8 @@ export default function Home() {
             <div className="side-cards">
               <motion.div 
                 className="class-card side-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                {...fadeInUpDelayed(0.2)}
+                whileInView="animate"
                 viewport={{ once: true }}
               >
                 <h3 className="class-title">Yoga for Pregnant</h3>
@@ -199,9 +217,8 @@ export default function Home() {
 
               <motion.div 
                 className="class-card side-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                {...fadeInUpDelayed(0.4)}
+                whileInView="animate"
                 viewport={{ once: true }}
               >
                 <h3 className="class-title">Hatha yoga</h3>
@@ -228,9 +245,8 @@ export default function Home() {
 
           <motion.div 
             className="classes-footer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            {...fadeInUpDelayed(0.6)}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             <button className="see-more-btn">See more</button>
@@ -243,25 +259,25 @@ export default function Home() {
         <div className="container">
           <motion.h2 
             className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            {...fadeInUp}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             Choose Your Plan
           </motion.h2>
           <div className="pricing-toggle">
-            <span className="toggle-label">Weekly</span>
-            <div className="toggle-switch">
-              <input 
-                type="checkbox" 
-                id="pricing-toggle" 
-                checked={isMonthly}
-                onChange={() => setIsMonthly(!isMonthly)}
-              />
-              <label htmlFor="pricing-toggle"></label>
-            </div>
-            <span className="toggle-label">Monthly</span>
+            <button 
+              className={!isMonthly ? 'active' : ''}
+              onClick={() => setIsMonthly(false)}
+            >
+              Weekly
+            </button>
+            <button 
+              className={isMonthly ? 'active' : ''}
+              onClick={() => setIsMonthly(true)}
+            >
+              Monthly
+            </button>
           </div>
           <div className="pricing-grid">
             {[
@@ -291,9 +307,8 @@ export default function Home() {
               <motion.div 
                 key={index}
                 className={`pricing-card ${plan.featured ? 'featured' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                {...fadeInUpDelayed(index * 0.2)}
+                whileInView="animate"
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
@@ -326,9 +341,8 @@ export default function Home() {
         <div className="container">
           <motion.div 
             className="team-content"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            {...fadeInUp}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             <div className="team-image">
@@ -357,9 +371,8 @@ export default function Home() {
         <div className="container">
           <motion.h2 
             className="testimonial-main-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            {...fadeInUp}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             What our client say about us?
@@ -367,9 +380,8 @@ export default function Home() {
 
           <motion.div 
             className="single-testimonial-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            {...fadeInUpDelayed(0.2)}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             <div className="testimonial-card-content">
@@ -408,9 +420,8 @@ export default function Home() {
 
           <motion.div 
             className="testimonial-cta-section"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            {...fadeInUpDelayed(0.4)}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             <button className="write-comment-btn">Write comment</button>
@@ -430,9 +441,8 @@ export default function Home() {
         <div className="container">
           <motion.h2 
             className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            {...fadeInUp}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             Get In Touch
@@ -440,9 +450,8 @@ export default function Home() {
           <div className="contact-content">
             <motion.div 
               className="contact-info"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              {...fadeInUpDelayed(0.2)}
+              whileInView="animate"
               viewport={{ once: true }}
             >
               <div className="contact-card">
@@ -469,9 +478,8 @@ export default function Home() {
             </motion.div>
             <motion.div 
               className="contact-map"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              {...fadeInUpDelayed(0.4)}
+              whileInView="animate"
               viewport={{ once: true }}
             >
               <iframe 
@@ -493,9 +501,8 @@ export default function Home() {
         <div className="container">
           <motion.div 
             className="newsletter-content"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            {...fadeInUp}
+            whileInView="animate"
             viewport={{ once: true }}
           >
             <h2>Stay Connected</h2>
