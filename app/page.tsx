@@ -109,230 +109,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="services">
-        <div className="container">
-          <motion.h2 
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            Our Services
-          </motion.h2>
-          <div className="services-grid">
-            {[
-              {
-                title: "Individual Therapy",
-                description: "Personalized one-on-one sessions to help you overcome challenges and achieve mental clarity.",
-                image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                title: "Group Sessions",
-                description: "Connect with others on similar journeys in supportive group therapy environments.",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                title: "Mindfulness Training",
-                description: "Learn practical meditation and mindfulness techniques for daily stress management.",
-                image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                title: "Wellness Coaching",
-                description: "Holistic lifestyle coaching to improve your overall well-being and life satisfaction.",
-                image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              }
-            ].map((service, index) => (
-              <motion.div 
-                key={index}
-                className="service-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-              >
-                <div className="card-image">
-                  <Image src={service.image} alt={service.title} width={600} height={200} />
-                </div>
-                <div className="card-content">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  <button className="card-cta">Learn More</button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="pricing">
-        <div className="container">
-          <motion.h2 
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            Choose Your Plan
-          </motion.h2>
-          <div className="pricing-toggle">
-            <span className="toggle-label">Weekly</span>
-            <div className="toggle-switch">
-              <input 
-                type="checkbox" 
-                id="pricing-toggle" 
-                checked={isMonthly}
-                onChange={() => setIsMonthly(!isMonthly)}
-              />
-              <label htmlFor="pricing-toggle"></label>
-            </div>
-            <span className="toggle-label">Monthly</span>
-          </div>
-          <div className="pricing-grid">
-            {[
-              {
-                name: "Starter",
-                icon: "fas fa-leaf",
-                weeklyPrice: 89,
-                monthlyPrice: 299,
-                features: ["2 Individual Sessions", "Basic Wellness Resources", "Email Support"]
-              },
-              {
-                name: "Premium",
-                icon: "fas fa-heart",
-                weeklyPrice: 149,
-                monthlyPrice: 499,
-                features: ["4 Individual Sessions", "2 Group Sessions", "Mindfulness Training", "24/7 Support"],
-                featured: true
-              },
-              {
-                name: "Complete",
-                icon: "fas fa-star",
-                weeklyPrice: 199,
-                monthlyPrice: 699,
-                features: ["Unlimited Sessions", "Wellness Coaching", "Personalized Programs", "Priority Support"]
-              }
-            ].map((plan, index) => (
-              <motion.div 
-                key={index}
-                className={`pricing-card ${plan.featured ? 'featured' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="pricing-icon">
-                  <i className={plan.icon}></i>
-                </div>
-                <h3>{plan.name}</h3>
-                <div className="price">
-                  <span className="amount">
-                    ${isMonthly ? plan.monthlyPrice : plan.weeklyPrice}
-                  </span>
-                  <span className="period">
-                    /{isMonthly ? 'month' : 'week'}
-                  </span>
-                </div>
-                <ul className="features">
-                  {plan.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-                <button className="pricing-cta">Choose Plan</button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section id="team" className="team">
-        <div className="container">
-          <motion.div 
-            className="team-content"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="team-image">
-              <Image 
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="Our Team" 
-                width={600} 
-                height={400}
-              />
-            </div>
-            <div className="team-text">
-              <h2>Meet Our Expert Team</h2>
-              <p>Our team of licensed therapists and wellness coaches are dedicated to helping you achieve mental clarity and emotional balance. With over 50 years of combined experience, we provide evidence-based treatments tailored to your unique needs.</p>
-              <blockquote>
-                "We believe that everyone deserves to live a fulfilling life free from the burden of mental health challenges."
-                <cite>- Dr. Sarah Johnson, Lead Therapist</cite>
-              </blockquote>
-              <button className="team-cta">Meet the Team</button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="testimonials">
-        <div className="container">
-          <motion.h2 
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            What Our Clients Say
-          </motion.h2>
-          <div className="testimonials-carousel">
-            <motion.div 
-              key={currentTestimonial}
-              className="testimonial active"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="testimonial-content">
-                <p>"{testimonials[currentTestimonial].text}"</p>
-                <div className="testimonial-author">
-                  <Image 
-                    src={testimonials[currentTestimonial].image} 
-                    alt={testimonials[currentTestimonial].author}
-                    width={60}
-                    height={60}
-                  />
-                  <div>
-                    <h4>{testimonials[currentTestimonial].author}</h4>
-                    <span>{testimonials[currentTestimonial].role}</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          <div className="testimonial-nav">
-            <button className="prev-btn" onClick={prevTestimonial}>
-              <i className="fas fa-chevron-left"></i>
-            </button>
-            <button className="next-btn" onClick={nextTestimonial}>
-              <i className="fas fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* Classes Section */}
-      <section className="classes">
+      <section id="services" className="classes">
         <div className="container">
           <motion.h2 
             className="classes-title"
@@ -459,6 +237,193 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="pricing">
+        <div className="container">
+          <motion.h2 
+            className="section-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            Choose Your Plan
+          </motion.h2>
+          <div className="pricing-toggle">
+            <span className="toggle-label">Weekly</span>
+            <div className="toggle-switch">
+              <input 
+                type="checkbox" 
+                id="pricing-toggle" 
+                checked={isMonthly}
+                onChange={() => setIsMonthly(!isMonthly)}
+              />
+              <label htmlFor="pricing-toggle"></label>
+            </div>
+            <span className="toggle-label">Monthly</span>
+          </div>
+          <div className="pricing-grid">
+            {[
+              {
+                name: "Starter",
+                icon: "fas fa-leaf",
+                weeklyPrice: 89,
+                monthlyPrice: 299,
+                features: ["2 Individual Sessions", "Basic Wellness Resources", "Email Support"]
+              },
+              {
+                name: "Premium",
+                icon: "fas fa-heart",
+                weeklyPrice: 149,
+                monthlyPrice: 499,
+                features: ["4 Individual Sessions", "2 Group Sessions", "Mindfulness Training", "24/7 Support"],
+                featured: true
+              },
+              {
+                name: "Complete",
+                icon: "fas fa-star",
+                weeklyPrice: 199,
+                monthlyPrice: 699,
+                features: ["Unlimited Sessions", "Wellness Coaching", "Personalized Programs", "Priority Support"]
+              }
+            ].map((plan, index) => (
+              <motion.div 
+                key={index}
+                className={`pricing-card ${plan.featured ? 'featured' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="pricing-icon">
+                  <i className={plan.icon}></i>
+                </div>
+                <h3>{plan.name}</h3>
+                <div className="price">
+                  <span className="amount">
+                    ${isMonthly ? plan.monthlyPrice : plan.weeklyPrice}
+                  </span>
+                  <span className="period">
+                    /{isMonthly ? 'month' : 'week'}
+                  </span>
+                </div>
+                <ul className="features">
+                  {plan.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+                <button className="pricing-cta">Choose Plan</button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="team" className="team">
+        <div className="container">
+          <motion.div 
+            className="team-content"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="team-image">
+              <Image 
+                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Our Team" 
+                width={600} 
+                height={400}
+              />
+            </div>
+            <div className="team-text">
+              <h2>Meet Our Expert Team</h2>
+              <p>Our team of licensed therapists and wellness coaches are dedicated to helping you achieve mental clarity and emotional balance. With over 50 years of combined experience, we provide evidence-based treatments tailored to your unique needs.</p>
+              <blockquote>
+                "We believe that everyone deserves to live a fulfilling life free from the burden of mental health challenges."
+                <cite>- Dr. Sarah Johnson, Lead Therapist</cite>
+              </blockquote>
+              <button className="team-cta">Meet the Team</button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="client-testimonial">
+        <div className="container">
+          <motion.h2 
+            className="testimonial-main-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            What our client say about us?
+          </motion.h2>
+
+          <motion.div 
+            className="single-testimonial-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="testimonial-card-content">
+              <div className="testimonial-left">
+                <div className="testimonial-avatar">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    alt="Yael Smilansky"
+                    width={80}
+                    height={80}
+                  />
+                </div>
+                <div className="testimonial-user-info">
+                  <h4 className="testimonial-name">Yael Smilansky</h4>
+                  <p className="testimonial-age">26 years</p>
+                </div>
+                <div className="social-icons">
+                  <a href="#" className="social-icon">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" className="social-icon">
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <div className="testimonial-right">
+                <p className="testimonial-text">
+                  I liked dynamic and interesting classes with Alicia Bethany. 
+                  They develop will power. Workout pace helps to clean the brain from unnecessary thoughts and you focus on doing asanas and body control. 
+                  I really liked training, thank you!
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="testimonial-cta-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <button className="write-comment-btn">Write comment</button>
+          </motion.div>
+
+          {/* Side Navigation */}
+          <div className="testimonial-side-nav">
+            <span className="nav-indicator">05 | 08</span>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Contact Section */}
       <section id="contact" className="contact">
