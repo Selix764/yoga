@@ -331,43 +331,132 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="gallery">
+      {/* Classes Section */}
+      <section className="classes">
         <div className="container">
           <motion.h2 
-            className="section-title"
+            className="classes-title"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Our Peaceful Spaces
+            Classes
           </motion.h2>
-          <div className="gallery-grid">
-            {[
-              "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            ].map((image, index) => (
+          <div className="classes-grid">
+            {/* Main Class Card */}
+            <motion.div 
+              className="class-card main-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="class-content">
+                <div className="class-info">
+                  <h3 className="class-title">Ashtanga vinyasa yoga</h3>
+                  <p className="class-level">Beginners level</p>
+                  
+                  <div className="class-schedule">
+                    <div className="schedule-item">
+                      <i className="fas fa-calendar-alt"></i>
+                      <span>Tu – Th 07:00 am – 09:00 am</span>
+                    </div>
+                    <div className="schedule-item">
+                      <i className="fas fa-calendar-alt"></i>
+                      <span>Fr 13:00 pm – 14:00 pm</span>
+                    </div>
+                  </div>
+
+                  <div className="class-trainer">
+                    <i className="fas fa-user"></i>
+                    <span>Alicia Bethany</span>
+                  </div>
+
+                  <p className="class-description">
+                    A dynamic form of yoga that synchronizes breath with movement. Perfect for those looking to build strength, flexibility, and mental focus. This class is designed for beginners who want to learn the fundamentals of vinyasa flow.
+                  </p>
+
+                  <button className="class-cta">Get started</button>
+                </div>
+                <div className="class-image">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                    alt="Ashtanga vinyasa yoga class" 
+                    width={300} 
+                    height={200}
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Side Cards */}
+            <div className="side-cards">
               <motion.div 
-                key={index}
-                className="gallery-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="class-card side-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
               >
-                <Image src={image} alt={`Gallery ${index + 1}`} width={400} height={250} />
-                <div className="gallery-overlay">
-                  <i className="fas fa-search-plus"></i>
+                <h3 className="class-title">Yoga for Pregnant</h3>
+                <p className="class-level">Beginners level</p>
+                
+                <div className="class-schedule">
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Tu – Th 07:00 am – 09:00 am</span>
+                  </div>
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Fr 13:00 pm – 14:00 pm</span>
+                  </div>
+                </div>
+
+                <div className="class-trainer">
+                  <i className="fas fa-user"></i>
+                  <span>Alicia Bethany</span>
                 </div>
               </motion.div>
-            ))}
+
+              <motion.div 
+                className="class-card side-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="class-title">Hatha yoga</h3>
+                <p className="class-level">Advanced level</p>
+                
+                <div className="class-schedule">
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Mo – We 06:00 am – 07:30 am</span>
+                  </div>
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Sa 10:00 am – 11:30 am</span>
+                  </div>
+                </div>
+
+                <div className="class-trainer">
+                  <i className="fas fa-user"></i>
+                  <span>Liran Voltberg</span>
+                </div>
+              </motion.div>
+            </div>
           </div>
+
+          <motion.div 
+            className="classes-footer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <button className="see-more-btn">See more</button>
+          </motion.div>
         </div>
       </section>
 
