@@ -87,7 +87,8 @@ export default function Home() {
           </div>
           <ul className="nav-menu">
                                 <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Classes</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact</a></li>
           </ul>
           <div className="nav-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -324,6 +325,90 @@ export default function Home() {
 
 
 
+      {/* Our Team Section */}
+      <section id="team" className="our-team">
+        <div className="container">
+          <motion.h2 
+            className="team-title"
+            {...fadeInUp}
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            Our team
+          </motion.h2>
+          
+          <motion.div 
+            className="team-member-card"
+            {...fadeInUpDelayed(0.2)}
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <div className="team-card-content">
+              <div className="team-info">
+                <div className="team-member-header">
+                  <div className="member-designation">Trainer Ashtanga vinyasa yoga</div>
+                  <h3 className="member-name">
+                    <i className="fas fa-user"></i>
+                    Alicia Bethany
+                  </h3>
+                </div>
+
+                <div className="member-details">
+                  <h4 className="details-title">Key information</h4>
+                  <p className="member-description">
+                    In yoga about 5 years. She graduated from the course of teachers of 
+                    Valentina Malinovskaya's Hatha Yoga (there is a certificate). Balance yoga 
+                    instructor (certificate), perinatal yoga, participated in seminars on yoga 
+                    therapy (there is a certificate), pranayama, techniques of working with 
+                    attention. In my studies I use the principle of vinyasa as a link between 
+                    breathing and movement.
+                  </p>
+                  
+                  <p className="member-description">
+                    Particular attention is paid to the restoration of muscle balance through 
+                    dynamic vyayam to work the muscles of antagonists. I use mandatory 
+                    compensation after the load. I have over a year of experience in group and 
+                    personal training. I am looking for an opportunity to reboot in the evening or 
+                    morning. Alicia regularly attend master classes.
+                  </p>
+                  
+                  <div className="member-social">
+                    <span className="social-label">Alicia in social networks:</span>
+                    <div className="social-icons">
+                      <a href="#" className="social-icon instagram">
+                        <i className="fab fa-instagram"></i>
+                      </a>
+                      <a href="#" className="social-icon twitter">
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                      <a href="#" className="social-icon facebook">
+                        <i className="fab fa-facebook-f"></i>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <button className="ask-question-btn">Ask a Question</button>
+                </div>
+              </div>
+              
+              <div className="team-image">
+                <Image 
+                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                  alt="Alicia Bethany - Yoga Trainer" 
+                  width={400} 
+                  height={500}
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Side Navigation */}
+          <div className="team-side-nav">
+            <span className="nav-indicator">01</span>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
@@ -413,17 +498,18 @@ export default function Home() {
             </div>
             <div className="footer-links">
               <div className="footer-column">
-                <h4>Services</h4>
+                <h4>Classes</h4>
                 <ul>
-                  <li><a href="#services">Individual Therapy</a></li>
-                  <li><a href="#services">Group Sessions</a></li>
-                  <li><a href="#services">Mindfulness Training</a></li>
-                  <li><a href="#services">Wellness Coaching</a></li>
+                  <li><a href="#services">Ashtanga Vinyasa Yoga</a></li>
+                  <li><a href="#services">Yoga for Pregnant</a></li>
+                  <li><a href="#services">Hatha Yoga</a></li>
+                  <li><a href="#services">All Classes</a></li>
                 </ul>
               </div>
               <div className="footer-column">
-                <h4>Company</h4>
+                <h4>About</h4>
                 <ul>
+                  <li><a href="#team">Our Team</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <li><a href="#">Privacy Policy</a></li>
                   <li><a href="#">Terms of Service</a></li>
