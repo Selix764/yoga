@@ -121,12 +121,7 @@ export default function Home() {
           <div className="arrow-down">↓</div>
         </div>
 
-        {/* Vertical Navigation */}
-        <div className="vertical-nav">
-          <div className="nav-arrow">↑</div>
-          <div className="page-indicator">01 / 03</div>
-          <div className="nav-arrow">↓</div>
-        </div>
+
       </section>
 
       {/* Classes Section */}
@@ -316,10 +311,7 @@ export default function Home() {
             <button className="write-comment-btn">Write comment</button>
           </motion.div>
 
-          {/* Side Navigation */}
-          <div className="testimonial-side-nav">
-            <span className="nav-indicator">05 | 08</span>
-          </div>
+
         </div>
       </section>
 
@@ -402,10 +394,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Side Navigation */}
-          <div className="team-side-nav">
-            <span className="nav-indicator">01</span>
-          </div>
+
         </div>
       </section>
 
@@ -470,21 +459,71 @@ export default function Home() {
 
       {/* Newsletter Section */}
       <section className="newsletter">
-        <div className="newsletter-background"></div>
         <div className="container">
-          <motion.div 
-            className="newsletter-content"
-            {...fadeInUp}
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <h2>Stay Connected</h2>
-            <p>Get wellness tips, mindfulness exercises, and exclusive offers delivered to your inbox.</p>
-            <form className="newsletter-form">
-              <input type="email" placeholder="Enter your email address" required />
-              <button type="submit">Subscribe</button>
-            </form>
-          </motion.div>
+          <div className="newsletter-layout">
+            <motion.div 
+              className="newsletter-content"
+              {...fadeInUp}
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <div className="newsletter-text">
+                <h2>Stay Connected</h2>
+                <p>Join our wellness community and discover your path to mindful living. Get expert tips, exclusive class updates, and inspiration delivered to your inbox.</p>
+                
+                <div className="newsletter-benefits">
+                  <div className="benefit-item">
+                    <i className="fas fa-heart"></i>
+                    <span>Weekly wellness tips</span>
+                  </div>
+                  <div className="benefit-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Early class bookings</span>
+                  </div>
+                  <div className="benefit-item">
+                    <i className="fas fa-gift"></i>
+                    <span>Exclusive offers</span>
+                  </div>
+                </div>
+              </div>
+              
+              <motion.div 
+                className="newsletter-form-container"
+                {...fadeInUpDelayed(0.2)}
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                <h3>Subscribe to our newsletter</h3>
+                <form className="newsletter-form">
+                  <div className="input-group">
+                    <div className="input-container">
+                      <i className="fas fa-user"></i>
+                      <input type="text" placeholder="Your name" required />
+                    </div>
+                    <div className="input-container">
+                      <i className="fas fa-envelope"></i>
+                      <input type="email" placeholder="Your email address" required />
+                    </div>
+                  </div>
+                  <button type="submit" className="subscribe-btn">
+                    <span>Start Your Journey</span>
+                    <i className="fas fa-arrow-right"></i>
+                  </button>
+                  <p className="privacy-note">
+                    <i className="fas fa-lock"></i>
+                    We respect your privacy. Unsubscribe at any time.
+                  </p>
+                </form>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+        
+        {/* Background decorative elements */}
+        <div className="newsletter-decoration">
+          <div className="decoration-circle circle-1"></div>
+          <div className="decoration-circle circle-2"></div>
+          <div className="decoration-circle circle-3"></div>
         </div>
       </section>
 
