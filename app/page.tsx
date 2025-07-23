@@ -172,7 +172,7 @@ export default function Home() {
                 </div>
                 <div className="class-image">
                   <Image 
-                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                    src="/images/yoga.jpg" 
                     alt="Ashtanga vinyasa yoga class" 
                     width={300} 
                     height={200}
