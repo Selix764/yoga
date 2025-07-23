@@ -613,11 +613,11 @@ section {
 .testimonial-card-content {
   background: white;
   border-radius: 20px;
-  padding: 3rem;
+  overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   display: flex;
-  gap: 3rem;
-  align-items: flex-start;
+  gap: 0;
+  align-items: stretch;
   text-align: left;
 }
 
@@ -627,6 +627,8 @@ section {
   align-items: center;
   min-width: 200px;
   text-align: center;
+  padding: 3rem 2rem 3rem 3rem;
+  background: var(--light-gray);
 }
 
 .testimonial-avatar {
@@ -638,7 +640,13 @@ section {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--light-gray);
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-right {
+  flex: 1;
+  padding: 3rem;
 }
 
 .testimonial-user-info {
@@ -686,9 +694,7 @@ section {
   text-decoration: underline;
 }
 
-.testimonial-right {
-  flex: 1;
-}
+
 
 .testimonial-text {
   font-size: 1.1rem;
@@ -767,7 +773,7 @@ section {
 .class-card {
   background: white;
   border-radius: 15px;
-  padding: 2rem;
+  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
@@ -783,24 +789,35 @@ section {
 
 .class-content {
   display: flex;
-  gap: 2rem;
-  align-items: flex-start;
+  gap: 0;
+  align-items: stretch;
+  height: 100%;
 }
 
 .class-info {
   flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .class-image {
   flex-shrink: 0;
   width: 200px;
+  position: relative;
+  overflow: hidden;
 }
 
 .class-image img {
   width: 100%;
-  height: 150px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.class-card:hover .class-image img {
+  transform: scale(1.05);
 }
 
 .class-title {
@@ -1754,15 +1771,17 @@ section {
 
   .class-content {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0;
   }
 
   .class-image {
     width: 100%;
+    height: 200px;
+    order: -1;
   }
 
   .class-image img {
-    height: 200px;
+    height: 100%;
   }
 
   .side-cards {
@@ -1816,6 +1835,20 @@ section {
     width: 100%;
     height: 300px;
     order: -1;
+  }
+
+  .testimonial-card-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .testimonial-left {
+    padding: 2rem;
+    order: -1;
+  }
+
+  .testimonial-right {
+    padding: 2rem;
   }
 
   .team-side-nav {
