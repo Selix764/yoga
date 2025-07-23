@@ -170,14 +170,6 @@ export default function Home() {
 
                   <button className="class-cta">Get started</button>
                 </div>
-                <div className="class-image">
-                  <Image 
-                    src="/images/yoga.jpg" 
-                    alt="Ashtanga vinyasa yoga class" 
-                    width={300} 
-                    height={200}
-                  />
-                </div>
               </div>
             </motion.div>
 
@@ -319,7 +311,7 @@ export default function Home() {
 
       {/* Our Team Section */}
       <section id="team" className="our-team">
-        <div className="container">
+        <div className="container flex justify-center">
           <motion.h2 
             className="team-title"
             {...fadeInUp}
