@@ -189,41 +189,23 @@ export default function Home() {
                 whileInView="animate"
                 viewport={{ once: true }}
               >
-                <div className="class-content">
-                  <div className="class-info">
-                    <h3 className="class-title">Yoga for Pregnant</h3>
-                    <p className="class-level">Beginners level</p>
-                    
-                    <div className="class-schedule">
-                      <div className="schedule-item">
-                        <i className="fas fa-calendar-alt"></i>
-                        <span>Tu – Th 07:00 am – 09:00 am</span>
-                      </div>
-                      <div className="schedule-item">
-                        <i className="fas fa-calendar-alt"></i>
-                        <span>Fr 13:00 pm – 14:00 pm</span>
-                      </div>
-                    </div>
-
-                    <div className="class-trainer">
-                      <i className="fas fa-user"></i>
-                      <span>Alicia Bethany</span>
-                    </div>
-
-                    <p className="class-description">
-                      Gentle, safe yoga practice designed specifically for expecting mothers. Focus on breathing, gentle stretching, and poses that support pregnancy wellness while building strength for childbirth and recovery.
-                    </p>
-
-                    <button className="class-cta">Get started</button>
+                <h3 className="class-title">Yoga for Pregnant</h3>
+                <p className="class-level">Beginners level</p>
+                
+                <div className="class-schedule">
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Tu – Th 07:00 am – 09:00 am</span>
                   </div>
-                  <div className="class-image">
-                    <Image 
-                      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                      alt="Yoga for pregnant women" 
-                      width={300} 
-                      height={200}
-                    />
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Fr 13:00 pm – 14:00 pm</span>
                   </div>
+                </div>
+
+                <div className="class-trainer">
+                  <i className="fas fa-user"></i>
+                  <span>Alicia Bethany</span>
                 </div>
               </motion.div>
 
@@ -233,41 +215,23 @@ export default function Home() {
                 whileInView="animate"
                 viewport={{ once: true }}
               >
-                <div className="class-content">
-                  <div className="class-info">
-                    <h3 className="class-title">Hatha yoga</h3>
-                    <p className="class-level">Advanced level</p>
-                    
-                    <div className="class-schedule">
-                      <div className="schedule-item">
-                        <i className="fas fa-calendar-alt"></i>
-                        <span>Mo – We 06:00 am – 07:30 am</span>
-                      </div>
-                      <div className="schedule-item">
-                        <i className="fas fa-calendar-alt"></i>
-                        <span>Sa 10:00 am – 11:30 am</span>
-                      </div>
-                    </div>
-
-                    <div className="class-trainer">
-                      <i className="fas fa-user"></i>
-                      <span>Liran Voltberg</span>
-                    </div>
-
-                    <p className="class-description">
-                      Traditional Hatha yoga focusing on precise alignment and holding poses. Advanced practice that builds deep strength, flexibility, and mindfulness through sustained postures and breathing techniques.
-                    </p>
-
-                    <button className="class-cta">Get started</button>
+                <h3 className="class-title">Hatha yoga</h3>
+                <p className="class-level">Advanced level</p>
+                
+                <div className="class-schedule">
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Mo – We 06:00 am – 07:30 am</span>
                   </div>
-                  <div className="class-image">
-                    <Image 
-                      src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                      alt="Hatha yoga practice" 
-                      width={300} 
-                      height={200}
-                    />
+                  <div className="schedule-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>Sa 10:00 am – 11:30 am</span>
                   </div>
+                </div>
+
+                <div className="class-trainer">
+                  <i className="fas fa-user"></i>
+                  <span>Liran Voltberg</span>
                 </div>
               </motion.div>
             </div>
