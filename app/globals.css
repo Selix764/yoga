@@ -1193,7 +1193,28 @@ section {
 
 /* Contact Section */
 .contact {
-  background: white;
+  background: url('/images/clouds.jpg'), white;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 2;
 }
 
 .contact-content {
@@ -1424,7 +1445,10 @@ section {
 
 /* Footer - Redesigned */
 .footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: url('/images/clouds.jpg'), linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: white;
   padding: 4rem 0 2rem;
   position: relative;
@@ -1437,26 +1461,26 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--secondary-blue), transparent);
-  opacity: 0.5;
+  height: 100%;
+  background: rgba(14, 165, 233, 0.8);
+  z-index: 1;
 }
 
 .footer::after {
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: 1;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+  opacity: 0.7;
+  z-index: 2;
 }
 
 .footer .container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .footer-content {
@@ -1655,7 +1679,9 @@ section {
   .classes,
   .client-testimonial,
   .our-team,
-  .newsletter {
+  .newsletter,
+  .contact,
+  .footer {
     background-attachment: scroll;
   }
 }
